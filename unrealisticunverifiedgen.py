@@ -1,5 +1,3 @@
-import undetected_chromedriver as uc
-uc.install()
 import os
 from dhooks.client import Webhook
 from discord_webhook import DiscordWebhook
@@ -56,7 +54,7 @@ def runwindow():
         driver.get("https://discord.com/register")
         time.sleep(1)
         email = get_random_string(8) + str(random.randint(1234, 9876)) + "@gmail.com"
-        user = get_random_string(6 ) + str(random.randint(1234, 9876)) + " | Vex"
+        user = get_random_string(6 ) + str(random.randint(1234, 9876)) + " | Zex"
         driver.find_element_by_xpath('//*[@id="app-mount"]/div[2]/div/div/div/form/div/div/div[1]/div/input').send_keys(
             email)
         time.sleep(0.1)
@@ -83,30 +81,19 @@ def runwindow():
         time.sleep(3)
         
         actions.perform()
-        driver.find_element_by_class_name('inputDefault-3JxKJ2').click()
-        driver.find_element_by_xpath('//*[@id="app-mount"]/div[2]/div/div/div/form/div/div/div[6]/button').click()
         time.sleep(7)
-        print(Fore.GREEN + ' ')
-        driver.execute_script("hcaptcha.execute();")
-        time.sleep(5)
+        os.system("cls")
+        print("Please do the Auth")
+        input("Press Enter to when you have done the puzzle :)")
+        time.sleep(3)
         driver.switch_to.default_content()
         print(Fore.RESET + ' ')
         time.sleep(3)
  
         token = driver.execute_script(
             "let popup; popup = window.open('', '', `width=1,height=1`); if(!popup || !popup.document || !popup.document.write) console.log('Please allow popups'); window.dispatchEvent(new Event('beforeunload')); token = popup.localStorage.token.slice(1, -1); popup.close(); return token")
-        api = requests.get("https://discordapp.com/api/v9/invite/TXeqfXxb2B")
-        data = api.json()
-        check = requests.get("https://discordapp.com/api/v9/guilds/" + data['guild']['id'], headers={"Authorization": token})
-        stuff = check.json()
-        requests.post("https://discordapp.com/api/v9/invite/TXeqfXxb2B", headers={"Authorization": token})
-        requests.delete("https://discordapp.com/api/v9/guiilds" + data['guild']['id'], headers={"Authorization": token})
-        time.sleep(3)
-        print(f"Succesfully Joined {api}")
-        
 
-
-        hook = "if you want a webhook put it here xd"
+        hook = "Enter your webhook here or delete line: 97 - 101"
         r = requests.post(hook, json={
             "content": token
         })
