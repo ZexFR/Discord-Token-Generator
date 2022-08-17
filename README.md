@@ -19,3 +19,4 @@ This is a basic Discord Account Creator that uses Selenium to register for a dis
 * Join my server for extra tools 
 * Give me creds on this 
 * You must be using a vpn whilst using this tool
+* Tool stopped working due to discord changing a lot since I posted this, therefore this will NOT be updated.
