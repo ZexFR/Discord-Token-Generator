@@ -55,20 +55,18 @@ def runwindow():
         time.sleep(1)
         email = get_random_string(8) + str(random.randint(1234, 9876)) + "@gmail.com" # Creates a random email with @gmail.com at the end
         user = get_random_string(6 ) + str(random.randint(1234, 9876)) + " | Zex" # Creates a random amount of letters/numbers for the username 
-        driver.find_element_by_xpath('//*[@id="app-mount"]/div[2]/div/div/div/form/div/div/div[1]/div/input').send_keys(        #Writes the email in the box
-            email) 
+        driver.find_element("xpath", '//*[@id="app-mount"]/div[2]/div/div[1]/div/div/div/form/div/div/div[1]/div/input').send_keys(email)       #Writes the email in the box
         time.sleep(0.1)
-        driver.find_element_by_xpath('//*[@id="app-mount"]/div[2]/div/div/div/form/div/div/div[2]/div/input').send_keys(get_random_string(3) + str(random.randint(1234, 9876)) +  " | " + username) # Writes the username in the box
+        driver.find_element("xpath", '//*[@id="app-mount"]/div[2]/div/div[1]/div/div/div/form/div/div/div[2]/div/input').send_keys(get_random_string(3) + str(random.randint(1234, 9876)) +  " | " + username) # Writes the username in the box
         time.sleep(0.1)
-        driver.find_element_by_xpath('//*[@id="app-mount"]/div[2]/div/div/div/form/div/div/div[3]/div/input').send_keys(    # Writes the password in the box
+        driver.find_element("xpath", '//*[@id="app-mount"]/div[2]/div/div[1]/div/div/div/form/div/div/div[3]/div/input').send_keys(    # Writes the password in the box
             password) 
         time.sleep(0.1)
-        driver.find_element_by_xpath(
-            '//*[@id="app-mount"]/div[2]/div/div/div/form/div/div/div[4]/div[1]/div[1]/div/div/div/div/div[1]').click()  # Verifies the button
+        driver.find_element("xpath", '//*[@id="app-mount"]/div[2]/div/div[1]/div/div/div/form/div/div/div[5]/label/input').click()  # Verifies the button
         time.sleep(0.3)
         actions = ActionChains(driver)
         time.sleep(.2)
-        driver.find_elements_by_class_name('css-1hwfws3')[0].click() # Line 71 - 80 is the date writing
+        driver.find_elements(By.CLASS_NAME, 'css-1hwfws3')[0].click() # Line 71 - 80 is the date writing
         actions.send_keys(str(random.randint(1, 12)))
         actions.send_keys(Keys.ENTER)
         actions.send_keys(str(random.randint(1, 28)))
@@ -93,7 +91,7 @@ def runwindow():
         token = driver.execute_script(
             "let popup; popup = window.open('', '', `width=1,height=1`); if(!popup || !popup.document || !popup.document.write) console.log('Please allow popups'); window.dispatchEvent(new Event('beforeunload')); token = popup.localStorage.token.slice(1, -1); popup.close(); return token") # Gets the token of the account
 
-        hook = "Enter your webhook here or delete line: 97 - 101" 
+        hook = "Enter A Webhook Here OR Delete Lines 94-98" 
         r = requests.post(hook, json={
             "content": token
         })
