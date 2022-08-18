@@ -1,7 +1,8 @@
 # Discord Account Creator
 This is a basic Discord Account Creator that uses Selenium to register for a discord account and lets you verify it.
 
-#
+# Patched
+ The token needs phone verification as soon as it's created.
 
 ### Socials
 
