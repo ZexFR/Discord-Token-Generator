@@ -3,6 +3,14 @@ This is a basic Discord Account Creator that uses Selenium to register for a dis
 
 # Patched
  The token needs phone verification as soon as it's created.
+ 
+## Features
+- Random username 
+- Random password
+- Random date
+- Automatically get Discord token 
+- Proxy support
+
 
 ### Socials
 
