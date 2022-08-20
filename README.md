@@ -15,7 +15,7 @@ This is a basic Discord Account Creator that uses Selenium to register for a dis
 ### Socials
 
 * [Youtube](https://www.youtube.com/channel/UCaMOw0q18gUbw2OAIfv4qMQ)
-* [Discord](https://discord.gg/7anBydnRmq)
+* [Discord](https://discord.gg/CXqVjwzPG5)
 
 ### Terms of Service
 
